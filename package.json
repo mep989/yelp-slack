@@ -2,7 +2,7 @@
   "name": "yelp-slack",
   "version": "0.0.0",
   "description": "Yelp Slackbot",
-  "main": "index.js",
+  "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
