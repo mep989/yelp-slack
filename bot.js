@@ -3,7 +3,7 @@
 */
 
 var botkit = require('botkit');
-var yelp = require('yelp');
+//var yelp = require('yelp');
 var creds = require('./creds.json');
 
 var controller = botkit.slackbot({
