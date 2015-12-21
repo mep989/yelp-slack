@@ -7,3 +7,5 @@ List of commands for Yelp Slack integration
 /showme requires a type of food, returns a picture from a highly rated restaurant of that kind
 
 /dealhungry same as hungry but is limited to restaurants with deals
+
+/delivers shows only places that deliver 
