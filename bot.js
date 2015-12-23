@@ -33,7 +33,7 @@ controller.hears('hungry','ambient',function(bot,message) {
         function yelp_search(food){
           yelp.search({term: food, location: 'Chicago', limit: 2, sort: 2})
             .then(function (data) { //The API call was returned successfully
-              console.log('What about ' + data.businesses[0].name + '?'); //Log the API call response to the console
+              convo.say('What about ' + data.businesses[0].name + '?'); //Log the API call response to the console
             }).catch(function (err) { //There was an error with the API call
              console.error(err); //Log the API call error to the console
              });
