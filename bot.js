@@ -39,7 +39,8 @@ controller.hears('hungry','ambient',function(bot,message) {
 
 	      convo.say('Mmmmm, ' + response.text);
         convo.say("Let's see what's looks good around you.");
-        convo.say("What about " + yelp_search(response.text) + "?");
+        convo.say("What about " + console.log(yelp_search(response.text)) + "?");
+        convo.next();
         });
 
 	    });
