@@ -30,7 +30,7 @@ function yelp_search(food){
      });
 };
 
-controller.hears('hungry','ambient',function(bot,message) {
+controller.hears(['hungry'],['ambient'],function(bot,message) {
 
 	  // start a conversation to handle this response.
 	  bot.startConversation(message,function(err,convo) {
@@ -39,7 +39,11 @@ controller.hears('hungry','ambient',function(bot,message) {
 
 	      convo.say('Mmmmm, ' + response.text);
         convo.say("Let's see what's looks good around you.");
-        convo.say("What about " + console.log(yelp_search(response.text)) + "?");
+        var reco = yelp_search(response.text)
+        convo.next();
+      });
+      convo.ask("What about this?", function(response,convo){
+        convo.say(reco)
         convo.next();
         });
 
