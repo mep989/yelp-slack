@@ -21,6 +21,15 @@ controller.spawn({
 //  bot.reply(message, "What are you hungry for?");
 //});
 
+function yelp_search(food){
+  yelp.search({term: food, location: 'Chicago', limit: 2, sort: 2})
+    .then(function (data) { //The API call was returned successfully
+      return (data.businesses[0].name); //Log the API call response to the console
+    }).catch(function (err) { //There was an error with the API call
+     console.error(err); //Log the API call error to the console
+     });
+};
+
 controller.hears('hungry','ambient',function(bot,message) {
 
 	  // start a conversation to handle this response.
@@ -30,13 +39,8 @@ controller.hears('hungry','ambient',function(bot,message) {
 
 	      convo.say('Mmmmm, ' + response.text);
         convo.say("Let's see what's looks good around you.")
-        function yelp_search(food){
-          yelp.search({term: food, location: 'Chicago', limit: 2, sort: 2})
-            .then(function (data) { //The API call was returned successfully
-              convo.say('What about ' + data.businesses[0].name + '?'); //Log the API call response to the console
-            }).catch(function (err) { //There was an error with the API call
-             console.error(err); //Log the API call error to the console
-             });
+        var reco = yelp_search(response.text)
+        convo.say("What about " + reco + "?")
         };
 	      convo.next();
 
