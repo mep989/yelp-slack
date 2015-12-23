@@ -38,13 +38,10 @@ controller.hears('hungry','ambient',function(bot,message) {
 	    convo.ask('What are you hungry for?',function(response,convo) {
 
 	      convo.say('Mmmmm, ' + response.text);
-        convo.say("Let's see what's looks good around you.")
-        convo.say("What about " + yelp_search(response.text) + "?")
-        };
-	      convo.next();
+        convo.say("Let's see what's looks good around you.");
+        convo.say("What about " + yelp_search(response.text) + "?");
+        });
 
 	    });
 
-	  })
-
-	});
+	  });
