@@ -30,7 +30,7 @@ function yelp_search(food){
      });
 };
 
-controller.hears(['hungry'],['ambient'],function(bot,message) {
+controller.hears(['hungry'],['ambient','direct_message', 'direct_mention', 'mention'],function(bot,message) {
 
 	  // start a conversation to handle this response.
 	  bot.startConversation(message,function(err,convo) {
